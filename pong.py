@@ -12,7 +12,27 @@ Ejercicios
 """
 
 from random import choice, random
-from turtle import *
+from turtle import (
+    up,
+    goto,
+    down,
+    begin_fill,
+    forward,
+    left,
+    end_fill,
+    clear,
+    color,
+    dot,
+    update,
+    ontimer,
+    setup,
+    bgcolor,
+    hideturtle,
+    tracer,
+    listen,
+    onkey,
+    done,
+)
 
 from freegames import vector
 
@@ -38,11 +58,13 @@ def rectangle(x, y, width, height):
     goto(x, y)
     down()
     begin_fill()
+
     for count in range(2):
         forward(width)
         left(90)
         forward(height)
         left(90)
+
     end_fill()
 
 
@@ -98,10 +120,10 @@ hideturtle()
 tracer(False)
 listen()
 
-onkey(lambda: move(1, 20), 'w')
-onkey(lambda: move(1, -20), 's')
-onkey(lambda: move(2, 20), 'i')
-onkey(lambda: move(2, -20), 'k')
+onkey(lambda: move(1, 20), "w")
+onkey(lambda: move(1, -20), "s")
+onkey(lambda: move(2, 20), "i")
+onkey(lambda: move(2, -20), "k")
 
 draw()
 done()
