@@ -8,8 +8,20 @@ Ejercicios
 4. Permitir que el pajaro se meuva adelante y atras.
 """
 
-from random import *
-from turtle import *
+from random import randrange
+from turtle import (
+    clear,
+    done,
+    dot,
+    goto,
+    hideturtle,
+    onscreenclick,
+    ontimer,
+    setup,
+    tracer,
+    up,
+    update,
+)
 
 from freegames import vector
 
