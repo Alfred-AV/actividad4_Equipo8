@@ -1,15 +1,15 @@
-"""Pong, classic arcade game. 
-Exercises 
-1. Change the colors. 
-2. What is the frame rate? Make it faster or slower. 
-3. Change the speed of the ball. 
-4. Change the size of the paddles. 
-5. Change how the ball bounces off walls. 
-6. How would you add a computer player? 
-6. Add a second ball. 
+"""Pong, juego clásico de arcade.
 
+Ejercicios
+
+1. Cambia los colores.
+2. ¿Cuál es la velocidad de cuadros? Hazlo más rápido o más lento.
+3. Cambia la velocidad de la pelota.
+4. Cambia el tamaño de las paletas.
+5. Cambia cómo rebota la pelota en las paredes.
+6. ¿Cómo agregarías un jugador controlado por la computadora?
+7. Agrega una segunda pelota.
 """
-
 
 from random import choice, random
 from turtle import *
@@ -18,7 +18,7 @@ from freegames import vector
 
 
 def value():
-    """Randomly generate value between (-5, -3) or (3, 5)."""
+    """Genera aleatoriamente un valor entre (-5, -3) o (3, 5)."""
     return (3 + random() * 2) * choice([1, -1])
 
 
@@ -28,12 +28,12 @@ state = {1: 0, 2: 0}
 
 
 def move(player, change):
-    """Move player position by change."""
+    """Mueve la posición del jugador según el cambio indicado."""
     state[player] += change
 
 
 def rectangle(x, y, width, height):
-    """Draw rectangle at (x, y) with given width and height."""
+    """Dibuja un rectángulo en (x, y) con el ancho y alto dados."""
     up()
     goto(x, y)
     down()
@@ -47,10 +47,10 @@ def rectangle(x, y, width, height):
 
 
 def draw():
-    """Draw game and move pong ball."""
+    """Dibuja el juego y mueve la pelota."""
     clear()
 
-    # White rectangles
+    # Rectángulos blancos
     color("white")
     rectangle(-200, state[1], 10, 50)
     rectangle(190, state[2], 10, 50)
@@ -59,7 +59,7 @@ def draw():
     x = ball.x
     y = ball.y
 
-    # Red ball
+    # Pelota roja
     up()
     goto(x, y)
     dot(10, "red")
@@ -91,7 +91,7 @@ def draw():
 
 setup(420, 420, 370, 0)
 
-# Black space
+# Fondo negro
 bgcolor("black")
 
 hideturtle()
