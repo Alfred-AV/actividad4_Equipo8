@@ -1,11 +1,8 @@
-"""Tic Tac Toe - Versión corregida para flake8."""
+"""
+Tic Tac Toe - Versión final corregida.
 
-Exercises
-
-1. Give the X and O a different color and width.
-2. What happens when someone taps a taken spot?
-3. How would you detect when someone has won?
-4. How could you create a computer player?
+Se corrigió el error de comillas triples, los espacios entre funciones
+y se añadieron los cambios visuales de color.
 """
 
 import turtle
@@ -23,7 +20,7 @@ def grid():
 
 def drawx(x, y):
     """Dibuja la X en color rojo."""
-    turtle.color('red')  # Dos espacios antes del comentario
+    turtle.color('red')
     turtle.width(10)
     line(x + 20, y + 20, x + 113, y + 113)
     line(x + 20, y + 113, x + 113, y + 20)
@@ -31,7 +28,7 @@ def drawx(x, y):
 
 def drawo(x, y):
     """Dibuja el O en color azul."""
-    turtle.color('blue')  # Color del círculo
+    turtle.color('blue')
     turtle.width(10)
     turtle.up()
     turtle.goto(x + 67, y + 5)
@@ -49,7 +46,7 @@ players = [drawx, drawo]
 
 
 def tap(x, y):
-    """Lógica principal al hacer clic."""
+    """Lógica para dibujar al hacer clic."""
     x_coord = floor(x)
     y_coord = floor(y)
     player = state['player']
@@ -59,6 +56,7 @@ def tap(x, y):
     state['player'] = not player
 
 
+# Configuración inicial
 turtle.setup(420, 420, 370, 0)
 turtle.hideturtle()
 turtle.tracer(False)
