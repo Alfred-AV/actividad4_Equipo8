@@ -1,15 +1,15 @@
-"""Pong, classic arcade game.
+"""Pong, classic arcade game. 
+Exercises 
+1. Change the colors. 
+2. What is the frame rate? Make it faster or slower. 
+3. Change the speed of the ball. 
+4. Change the size of the paddles. 
+5. Change how the ball bounces off walls. 
+6. How would you add a computer player? 
+6. Add a second ball. 
 
-Exercises
-
-1. Change the colors.
-2. What is the frame rate? Make it faster or slower.
-3. Change the speed of the ball.
-4. Change the size of the paddles.
-5. Change how the ball bounces off walls.
-6. How would you add a computer player?
-6. Add a second ball.
 """
+
 
 from random import choice, random
 from turtle import *
@@ -49,6 +49,9 @@ def rectangle(x, y, width, height):
 def draw():
     """Draw game and move pong ball."""
     clear()
+
+    # White rectangles
+    color("white")
     rectangle(-200, state[1], 10, 50)
     rectangle(190, state[2], 10, 50)
 
@@ -56,9 +59,10 @@ def draw():
     x = ball.x
     y = ball.y
 
+    # Red ball
     up()
     goto(x, y)
-    dot(10)
+    dot(10, "red")
     update()
 
     if y < -200 or y > 200:
@@ -86,12 +90,18 @@ def draw():
 
 
 setup(420, 420, 370, 0)
+
+# Black space
+bgcolor("black")
+
 hideturtle()
 tracer(False)
 listen()
+
 onkey(lambda: move(1, 20), 'w')
 onkey(lambda: move(1, -20), 's')
 onkey(lambda: move(2, 20), 'i')
 onkey(lambda: move(2, -20), 'k')
+
 draw()
 done()
