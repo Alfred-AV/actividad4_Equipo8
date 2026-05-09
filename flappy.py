@@ -1,11 +1,11 @@
-"""Flappy, game inspired by Flappy Bird.
+"""El juego flappy, inspirado por flappy bird.
 
-Exercises
+Ejercicios
 
-1. Keep score.
-2. Vary the speed.
-3. Vary the size of the balls.
-4. Allow the bird to move forward and back.
+1. Mantener la puntuación.
+2. Variar la velocidad.
+3. Variar el tamaño de las pelotas.
+4. Permitir que el pajaro se meuva adelante y atras.
 """
 
 from random import *
@@ -18,18 +18,18 @@ balls = []
 
 
 def tap(x, y):
-    """Move bird up in response to screen tap."""
+    """Pajaro se mueve arriba en respuesta de un toque a la pantalla."""
     up = vector(0, 30)
     bird.move(up)
 
 
 def inside(point):
-    """Return True if point on screen."""
+    """regresa true si hay un punto en la pantalla."""
     return -200 < point.x < 200 and -200 < point.y < 200
 
 
 def draw(alive):
-    """Draw screen objects."""
+    """Dibuja objetos en la pantalla."""
     clear()
 
     goto(bird.x, bird.y)
@@ -47,7 +47,7 @@ def draw(alive):
 
 
 def move():
-    """Update object positions."""
+    """Actualiza la posicion de los objetos."""
     bird.y -= 5
 
     for ball in balls:
